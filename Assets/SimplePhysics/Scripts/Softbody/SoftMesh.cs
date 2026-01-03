@@ -16,12 +16,12 @@ public class SoftMesh : MonoBehaviour
     public float mergeEpsilon = 1e-5f;
 
     [Header("Joint - Linear")]
-    public float linearStrength = 2000f;
-    public float linearDamping = 80f;
+    public float linearStrength = 500f;
+    public float linearDamping = 10f;
     public float linearMaxForce = Mathf.Infinity;
 
     [Header("Joint - Angular")]
-    public float angularStrength = 200f;
+    public float angularStrength = 750f;
     public float angularDamping = 10f;
     public float angularMaxForce = Mathf.Infinity;
 
@@ -33,8 +33,8 @@ public class SoftMesh : MonoBehaviour
     [Header("MeshCollider & Collision Response")]
     public bool addMeshCollider = true;
     public bool meshColliderConvex = false;
-    public int impulseNearestN = 6;
-    public float impulseScale = 1f;
+    public int impulseNearestN = 3;
+    public float impulseScale = 0.2f;
 
     MeshCollider _meshCollider;
     Rigidbody[] _bodies;
@@ -63,6 +63,7 @@ public class SoftMesh : MonoBehaviour
         if (addMeshCollider)
             UpdateMeshCollider();
     }
+
 
     // Build Soft Mesh
     void BuildSoftMesh()

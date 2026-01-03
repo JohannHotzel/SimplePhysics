@@ -6,20 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 0
     path: Assets/SimplePhysics/Scenes/Ropes.unity
     guid: 1899b4df0c1d0914291308b1dd58a086
   - enabled: 0
-    path: Assets/SimplePhysics/Scenes/BoxWall.unity
-    guid: 5a964a8cb0c2e374ebdb2e57a4a99b50
-  - enabled: 0
     path: Assets/SimplePhysics/Scenes/Cloth.unity
     guid: db8994531bea2f54a871c630ce082b49
-  - enabled: 0
-    path: Assets/SimplePhysics/Scenes/SoftRect.unity
-    guid: 41bedf46f53b57440af1e197b90612b7
   - enabled: 1
     path: Assets/SimplePhysics/Scenes/SoftMesh.unity
     guid: 0d6e6cab497968043b764f859170094a
