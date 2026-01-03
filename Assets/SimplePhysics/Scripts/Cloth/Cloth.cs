@@ -185,7 +185,7 @@ public class Cloth : MonoBehaviour
         }
 
         mesh.vertices = vertices;
-        mesh.RecalculateNormals();
+        if ((Time.frameCount & 3) == 0) mesh.RecalculateNormals();
         mesh.RecalculateBounds();
     }
 
