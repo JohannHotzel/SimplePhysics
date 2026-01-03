@@ -21,6 +21,7 @@ public class Cloth : MonoBehaviour
     private Mesh mesh;
     private Vector3[] vertices;
     private int[] triangles;
+    private Vector2[] uvs;
 
 
     public void Init(List<Transform> pts, int r, int c, Material lineMaterial, Material clothMaterial)
@@ -124,7 +125,23 @@ public class Cloth : MonoBehaviour
 
         int vCount = rows * cols;
         vertices = new Vector3[vCount];
+        uvs = new Vector2[vCount];
 
+        //UVs
+        for (int r = 0; r < rows; r++)
+        {
+            float v = (rows > 1) ? (float)r / (rows - 1) : 0f;
+
+            for (int c = 0; c < cols; c++)
+            {
+                float u = (cols > 1) ? (float)c / (cols - 1) : 0f;
+
+                int i = r * cols + c;
+                uvs[i] = new Vector2(u, v);
+            }
+        }
+
+        //Triangles
         int quadCount = (rows - 1) * (cols - 1);
         triangles = new int[quadCount * 6];
 
@@ -149,6 +166,7 @@ public class Cloth : MonoBehaviour
         }
 
         mesh.vertices = vertices;
+        mesh.uv = uvs;
         mesh.triangles = triangles;
         mesh.RecalculateNormals();
         mesh.RecalculateBounds();
