@@ -8,10 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/SimplePhysics/Scenes/Ropes.unity
     guid: 1899b4df0c1d0914291308b1dd58a086
-  - enabled: 0
+  - enabled: 1
     path: Assets/SimplePhysics/Scenes/Cloth.unity
     guid: db8994531bea2f54a871c630ce082b49
-  - enabled: 1
+  - enabled: 0
     path: Assets/SimplePhysics/Scenes/SoftMesh.unity
     guid: 0d6e6cab497968043b764f859170094a
   m_configObjects:
