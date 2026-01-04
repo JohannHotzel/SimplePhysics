@@ -18,9 +18,9 @@ public class Cloth : MonoBehaviour
     public bool showMesh = true;
 
     [Header("MeshCollider & Collision Response")]
-    public bool addMeshCollider = true;
+    public bool addMeshCollider = false;
     public bool meshColliderConvex = false;
-    public bool relayCollisionImpulse = true;
+    public bool relayCollisionImpulse = false;
     public int impulseNearestN = 3;
     public float impulseScale = 0.2f;
 

@@ -371,7 +371,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: 0.06104851, y: 0, z: 0, w: 0.99813485}
-  m_LocalPosition: {x: 0, y: 13, z: -20.01}
+  m_LocalPosition: {x: 0, y: 13, z: -25.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -587,6 +587,7 @@ MonoBehaviour:
   projectionAngle: 1
   addMeshCollider: 1
   meshColliderConvex: 1
+  relayCollisionImpulse: 1
   impulseNearestN: 3
   impulseScale: 0.2
 --- !u!23 &579778213
@@ -702,6 +703,7 @@ MonoBehaviour:
   projectionAngle: 1
   addMeshCollider: 1
   meshColliderConvex: 1
+  relayCollisionImpulse: 1
   impulseNearestN: 3
   impulseScale: 0.2
 --- !u!23 &633127935
@@ -897,6 +899,7 @@ MonoBehaviour:
   projectionAngle: 1
   addMeshCollider: 1
   meshColliderConvex: 1
+  relayCollisionImpulse: 1
   impulseNearestN: 3
   impulseScale: 0.2
 --- !u!23 &1699604117
@@ -1012,6 +1015,7 @@ MonoBehaviour:
   projectionAngle: 1
   addMeshCollider: 1
   meshColliderConvex: 1
+  relayCollisionImpulse: 1
   impulseNearestN: 3
   impulseScale: 0.2
 --- !u!23 &1969123589
@@ -1226,6 +1230,7 @@ MonoBehaviour:
   projectionAngle: 1
   addMeshCollider: 1
   meshColliderConvex: 1
+  relayCollisionImpulse: 1
   impulseNearestN: 3
   impulseScale: 0.2
 --- !u!33 &208074586292535878
@@ -1617,6 +1622,7 @@ MonoBehaviour:
   projectionAngle: 1
   addMeshCollider: 1
   meshColliderConvex: 1
+  relayCollisionImpulse: 1
   impulseNearestN: 3
   impulseScale: 0.2
 --- !u!4 &3840692172555800035
@@ -1668,6 +1674,7 @@ MonoBehaviour:
   projectionAngle: 1
   addMeshCollider: 1
   meshColliderConvex: 1
+  relayCollisionImpulse: 1
   impulseNearestN: 3
   impulseScale: 0.2
 --- !u!1 &4469595589713041241
@@ -1715,6 +1722,7 @@ MonoBehaviour:
   projectionAngle: 1
   addMeshCollider: 1
   meshColliderConvex: 1
+  relayCollisionImpulse: 1
   impulseNearestN: 3
   impulseScale: 0.2
 --- !u!33 &5314754478913699919
@@ -1848,6 +1856,7 @@ MonoBehaviour:
   projectionAngle: 1
   addMeshCollider: 1
   meshColliderConvex: 1
+  relayCollisionImpulse: 1
   impulseNearestN: 3
   impulseScale: 0.2
 --- !u!1660057539 &9223372036854775807
