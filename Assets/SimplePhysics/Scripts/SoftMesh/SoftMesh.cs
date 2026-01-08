@@ -53,6 +53,7 @@ public class SoftMesh : MonoBehaviour
             ApplyToMesh(deformedVertices);
         }
     }
+
     void OnCollisionEnter(Collision c)
     {
         if (c.contactCount == 0) return;
@@ -60,18 +61,22 @@ public class SoftMesh : MonoBehaviour
         if ((deformLayers.value & (1 << c.gameObject.layer)) == 0) return;
 
         var cp = c.GetContact(0);
+
         Vector3 impactPointWS = cp.point;
         Vector3 impactNormalWS = -cp.normal;
 
+        DeformMeshAsync(impactPointWS, impactNormalWS);
+    }
+
+    //Deform mesh in a background thread
+    public void DeformMeshAsync(Vector3 impactPointWS, Vector3 impactNormalWS, float strength, float maxDistance)
+    {
         // snapshot everything needed (DON'T touch transform/mesh in worker)
         Matrix4x4 l2w = transform.localToWorldMatrix;
         Matrix4x4 w2l = transform.worldToLocalMatrix;
         Vector3 nWS = impactNormalWS.normalized;
 
         Vector3[] baseVerts = (Vector3[])deformedVertices.Clone();
-        float maxD = maxDistance;
-        float str = strength;
-
 
         Task.Run(() =>
         {
@@ -79,11 +84,11 @@ public class SoftMesh : MonoBehaviour
             {
                 Vector3 vWS = l2w.MultiplyPoint3x4(baseVerts[i]);
                 float dist = Vector3.Distance(vWS, impactPointWS);
-                if (dist > maxD) continue;
+                if (dist > maxDistance) continue;
 
-                float t = Mathf.Clamp01(dist / maxD);
+                float t = Mathf.Clamp01(dist / maxDistance);
                 float w = Mathf.SmoothStep(1f, 0f, t);
-                Vector3 vWSDef = vWS - nWS * (str * w);
+                Vector3 vWSDef = vWS - nWS * (strength * w);
 
                 baseVerts[i] = w2l.MultiplyPoint3x4(vWSDef);
             }
@@ -92,6 +97,18 @@ public class SoftMesh : MonoBehaviour
             hasResult = true;
         });
     }
+
+    //Comfort overload
+    public void DeformMeshAsync(Vector3 impactPointWS, Vector3 impactNormalWS)
+    {
+        DeformMeshAsync(
+            impactPointWS,
+            impactNormalWS,
+            strength,
+            maxDistance
+        );
+    }
+
     void ApplyToMesh(Vector3[] verts)
     {
         mesh.vertices = verts;
