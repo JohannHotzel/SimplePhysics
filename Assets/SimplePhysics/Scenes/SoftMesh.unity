@@ -273,6 +273,7 @@ MonoBehaviour:
   springStiffness: 500
   damping: 30
   updateCollider: 1
+  updateColliderEveryNFrames: 5
   reset: 0
 --- !u!54 &96521847
 Rigidbody:
@@ -442,13 +443,14 @@ MonoBehaviour:
   minImpactImpulse: 50
   dent: 0.2
   kick: 0
-  maxDistance: 2
+  maxDistance: 1.5
   deformLayers:
     serializedVersion: 2
     m_Bits: 256
   springStiffness: 100
   damping: 1
   updateCollider: 0
+  updateColliderEveryNFrames: 10
   reset: 0
 --- !u!64 &106814562
 MeshCollider:
@@ -469,7 +471,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -837671902095529838, guid: be0046462cbf4174db619b0c671e2271, type: 3}
 --- !u!23 &106814563
@@ -1942,6 +1944,7 @@ MonoBehaviour:
   springStiffness: 100
   damping: 1
   updateCollider: 1
+  updateColliderEveryNFrames: 5
   reset: 0
 --- !u!54 &645883159
 Rigidbody:
@@ -2333,6 +2336,7 @@ MonoBehaviour:
   springStiffness: 100
   damping: 2
   updateCollider: 1
+  updateColliderEveryNFrames: 5
   reset: 0
 --- !u!54 &744243912
 Rigidbody:
@@ -3347,7 +3351,8 @@ MonoBehaviour:
     m_Bits: 256
   springStiffness: 100
   damping: 2
-  updateCollider: 0
+  updateCollider: 1
+  updateColliderEveryNFrames: 10
   reset: 0
 --- !u!64 &1236791435
 MeshCollider:
@@ -3574,7 +3579,8 @@ MonoBehaviour:
     m_Bits: 256
   springStiffness: 100
   damping: 1
-  updateCollider: 0
+  updateCollider: 1
+  updateColliderEveryNFrames: 20
   reset: 0
 --- !u!64 &1302403673
 MeshCollider:
@@ -3942,7 +3948,8 @@ MonoBehaviour:
     m_Bits: 256
   springStiffness: 500
   damping: 30
-  updateCollider: 0
+  updateCollider: 1
+  updateColliderEveryNFrames: 10
   reset: 0
 --- !u!64 &1393723504
 MeshCollider:
@@ -4833,13 +4840,14 @@ MonoBehaviour:
   minImpactImpulse: 50
   dent: 0
   kick: 5
-  maxDistance: 2
+  maxDistance: 1.5
   deformLayers:
     serializedVersion: 2
     m_Bits: 256
   springStiffness: 100
   damping: 2
   updateCollider: 0
+  updateColliderEveryNFrames: 10
   reset: 0
 --- !u!64 &1798311621
 MeshCollider:
@@ -4860,7 +4868,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -837671902095529838, guid: be0046462cbf4174db619b0c671e2271, type: 3}
 --- !u!23 &1798311622
@@ -5276,13 +5284,14 @@ MonoBehaviour:
   minImpactImpulse: 50
   dent: 0.2
   kick: 0
-  maxDistance: 2
+  maxDistance: 1.5
   deformLayers:
     serializedVersion: 2
     m_Bits: 256
   springStiffness: 500
   damping: 30
   updateCollider: 0
+  updateColliderEveryNFrames: 10
   reset: 0
 --- !u!64 &2112753597
 MeshCollider:
@@ -5303,7 +5312,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -837671902095529838, guid: be0046462cbf4174db619b0c671e2271, type: 3}
 --- !u!23 &2112753598

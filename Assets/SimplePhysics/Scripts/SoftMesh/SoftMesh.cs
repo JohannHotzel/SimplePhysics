@@ -19,8 +19,9 @@ public class SoftMesh : MonoBehaviour
     public float springStiffness = 50f;
     public float damping = 8f;
 
-    [Header("CPU Apply / Collider")]
+    [Header("Collider")]
     public bool updateCollider = true;
+    public int updateColliderEveryNFrames = 5;
 
     [Header("Debug")]
     public bool reset = false;
@@ -104,6 +105,8 @@ public class SoftMesh : MonoBehaviour
 
     void FixedUpdate()
     {
+        frameCounter++;
+
         if (reset)
         {
             ResetState();
@@ -136,9 +139,15 @@ public class SoftMesh : MonoBehaviour
 
         if (updateCollider && mc != null)
         {
-            mc.sharedMesh = null;
-            mc.sharedMesh = mesh;
+            int n = Mathf.Max(1, updateColliderEveryNFrames);
+
+            if (frameCounter % n == 0)
+            {
+                mc.sharedMesh = null;
+                mc.sharedMesh = mesh;
+            }
         }
+
     }
 
 
