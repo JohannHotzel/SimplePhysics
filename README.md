@@ -1,4 +1,4 @@
-# Simple Physics
+# Unity Simple Physics
 ### Lightweight physics systems for Unity
 
 This project provides a collection of physics-based behaviors for Unity, including ropes, cloth, and soft bodies.  
